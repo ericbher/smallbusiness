@@ -23,6 +23,11 @@ class HyperionController extends \BaseController {
 		return View::make('contact');
 	}
 
+	public function msgSent()
+	{
+
+	}
+
 
 	/**
 	 * Store a newly created resource in storage.

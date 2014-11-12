@@ -19,3 +19,5 @@ Route::post('/', 'HyperionController@subscribe');
 
 Route::get('/contact', 'HyperionController@contact');
 
+Route::post('/contact', 'HyperionController@msgSent');
+
