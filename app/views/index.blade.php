@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Small Business TBA</title>
+    <title>Hyperion Bike Studios</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +28,65 @@
     .error{
         color: red;
     }
+
+    .logo img {
+width: 100% \9; /*Force IE10 and below to size SVG images correctly*/
+max-width: 100%;
+}
+
+@media (max-width:480px) { 
+.logo img {
+    width: 70% \9; /*Force IE10 and below to size SVG images correctly*/
+    max-width: 70% !important;
+}
+}
+
+@media (max-width:400px) { 
+.logo img {
+    width: 75% \9; /*Force IE10 and below to size SVG images correctly*/
+    max-width: 75%;
+}
+}
+
+@media (max-width:385px) { 
+.logo img {
+    width: 70% \9; /*Force IE10 and below to size SVG images correctly*/
+    max-width: 70%;
+}
+}
+
+@media (max-width:345px) { 
+.logo img {
+    width: 65% \9; /*Force IE10 and below to size SVG images correctly*/
+    max-width: 65%;
+}
+}
+
+@media (max-width:335px) { 
+.logo img {
+    width: 60% \9; /*Force IE10 and below to size SVG images correctly*/
+    max-width: 60%;
+}
+}
+
+@media (max-width:325px) { 
+.logo img {
+    width: 55% \9; /*Force IE10 and below to size SVG images correctly*/
+    max-width: 55%;
+}
+}
+
+@media (max-width:315px) { 
+.logo img {
+    width: 50% \9; /*Force IE10 and below to size SVG images correctly*/
+    max-width: 50%;
+}
+}
+
+.navbar-inverse {
+    background-color: #21252D;
+    border-color: #21252D;
+}
     </style>
 
  <!-- jQuery -->
@@ -88,7 +147,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Small Business TBA</a>
+                <a class="logo" href="/"><img src = "images/hyperionbikelogo1.png" style="margin-top: 9px;" /></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -138,7 +197,7 @@
             <div class="col-sm-4">
                 <h2>Contact Us</h2>
                 <address>
-                    <strong>Start Bootstrap</strong>
+                    <strong>Hyperion Bike Studios</strong>
                     <br>3481 Melrose Place
                     <br>Beverly Hills, CA 90210
                     <br>

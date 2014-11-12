@@ -11,55 +11,11 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('index');
-});
 
 
+Route::get('/', 'HyperionController@index');
 
-Route::post('/', function()
-{
+Route::post('/', 'HyperionController@subscribe');
 
-$rules = array(
-	'email' => 'required|email'
-);
+Route::get('/contact', 'HyperionController@contact');
 
-
-$validation = Validator::make(Input::all(), $rules);
-
-
-if ($validation->fails())
-{
-	return Redirect::to('/')
-	->withInput()
-	->withErrors($validation);
-} 
-else
-{
-	$subscriber = Subscriber::where('email','=', Input::get('email') )
-	->first();
-
-
-
-	if ($subscriber) 
-	{
-		return Redirect::to('/')
-		->withInput() //with old input
-		->with('email', $subscriber->email);
-	}
-
-	else
-	{
-		Subscriber::create(array('email' => Input::get('email')));
-		return Redirect::to('/')
-		->with('message', 'Thanks for signing up!');
-	}
-}
-
-});
-
-Route::get('/contact', function()
-{
-	return View::make('contact');
-});
