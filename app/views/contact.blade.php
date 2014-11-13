@@ -160,6 +160,12 @@ label {
                 <div class="col-sm-6 col-sm-offset-3">
                 {{Form::open(array('url'=>'/contact', 'method'=>'post', 'role'=>'form', 'class'=>'contactform'))}}
                 <h1 class = "contactheading">CONTACT US</h1>
+                @if(Session::has('errors'))
+                    <p class = "error">{{$errors->first('name')}}</p>
+                    <p class = "error">{{$errors->first('email')}}</p>
+                    <p class = "error">{{$errors->first('phone')}}</p>
+                    <p class = "error">{{$errors->first('message')}}</p>
+                    @endif
                 <div class="form-group">
                 {{Form::label('name', 'Name')}}
                 {{Form::text('name',Input::old('link'),

@@ -126,7 +126,7 @@ max-width: 100%;
                     <h4>{{ Session::get('message') }}</h4>
                 </div>
                 <div class="modal-body">
-                    <p>You are now signed up for our newsletter.</p>
+                    <p>{{ Session::get('messagebody') }}</p>
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@ max-width: 100%;
                         <a href="/about">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#services">Services</a>
                     </li>
                     <li>
                         <a href="/contact">Contact</a>
@@ -188,10 +188,10 @@ max-width: 100%;
         <div class="row">
             <div class="col-sm-8">
                 <h2>What We Do</h2>
-                <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
+                <p>At Hyperion Bike Studios, we are collective of artists, designers, mechanics, and engineers with a passion for bicycles. We repair and restore vintage bicycles. We also design custom bikes and offer a selction of high-quality brands such as Masi, Colnago, and Rene Herse. </p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
                 <p>
-                    <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
+                    <a class="btn btn-default btn-lg" href="#">Learn More &raquo;</a>
                 </p>
             </div>
             <div class="col-sm-4">
@@ -229,7 +229,7 @@ max-width: 100%;
 
         <hr>
 
-        <div class="row">
+        <div class="row" id="services">
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
                 <h2>Marketing Box #1</h2>

@@ -25,7 +25,39 @@ class HyperionController extends \BaseController {
 
 	public function msgSent()
 	{
+		$rules = array(
+			'name' => 'required',
+			'email' => 'required|email',
+			'phone' => 'numeric|min:7',
+			'message' => 'required'
+			);
 
+
+		$validation = Validator::make(Input::all(), $rules);
+
+		if ($validation->fails())
+		{
+			return Redirect::to('/contact')
+			->withInput()
+			->withErrors($validation);
+		}
+		else 
+		{
+			$data['name'] = Input::get('name');
+			$data['email'] = Input::get('email');
+			$data['phone'] = Input::get('phone');
+			$data['message'] = Input::get('message');
+			
+
+			Mail::send('emails.confirm', $data, function($message)
+			{
+    			$message->to(Input::get('email'), Input::get('name'))->subject('Thank You For Contact Hyperion Bike Studios');
+    			$message->attach('images/hyperionbikelogo1.png');
+			});
+			return Redirect::to('/')
+			->with('message', 'Thanks for contacting us!')
+			->with('messagebody', 'We\'ll get back to you as soon as possible!');
+		}
 	}
 
 
@@ -66,7 +98,8 @@ class HyperionController extends \BaseController {
 			{
 				Subscriber::create(array('email' => Input::get('email')));
 				return Redirect::to('/')
-				->with('message', 'Thanks for signing up!');
+				->with('message', 'Thanks for signing up!')
+				->with('messagebody', 'You are now signed up for our newsletter.');
 			}
 		}
 	}
